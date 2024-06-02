@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.App.container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+.home-screen h4 {
+  margin-bottom: 100px;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0px 26px;
+  text-align: left;
+}
+
+.home-screen h6 {
+  padding-bottom: 20px;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  margin-bottom: 4px;
+}
+
+.MuiBottomNavigation-root button {
+  font-weight: 800;
+}

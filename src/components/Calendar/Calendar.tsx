@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { Box, Typography, Grid, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
-import { green } from '@mui/material/colors';
+import { green, grey } from '@mui/material/colors';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { NavigateBefore } from '@mui/icons-material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-// Dados fictícios
+
 const gymData = [
   { date: '2024-08-01', attended: true },
   { date: '2024-08-03', attended: true },
@@ -76,8 +76,8 @@ const Calendar: React.FC = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: isAttended ? green[400] : 'grey.100',
-          color: isAttended ? 'white' : 'grey.300',
+          backgroundColor: isAttended ? green[400] : 'grey.900',
+          color: isAttended ? 'white' : 'grey.600',
           borderRadius: '10%',
           fontSize: isAttended ? 14 : 10,
           fontWeight: 'bold',
@@ -92,11 +92,19 @@ const Calendar: React.FC = () => {
   return (
     <Box>
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Button onClick={handlePrevMonth}><ArrowBackIosNewIcon/></Button>
-        <Typography variant="h6" gutterBottom>
+        <Button onClick={handlePrevMonth} sx={{ color: grey[300] }}>
+          <NavigateBefore />
+        </Button>
+        <Typography variant="h5" sx={{ 
+          fontWeight: 'bold',
+          paddingBottom: 1,
+          fontSize: 18,
+          color: grey[400]}} gutterBottom>
           {selectedDate.format('MMMM YYYY')}
         </Typography>
-        <Button onClick={handleNextMonth}><NavigateNextIcon/></Button>
+        <Button onClick={handleNextMonth} sx={{ color: grey[300] }}>
+          <NavigateNextIcon />
+        </Button>
       </Box>
       <Grid container justifyContent="center">
         {days.map(renderDay)}
@@ -110,10 +118,10 @@ const Calendar: React.FC = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} sx={{ color: grey[500] }}>
             Cancelar
           </Button>
-          <Button onClick={handleMarkAsAttended} color="primary">
+          <Button onClick={handleMarkAsAttended} sx={{ color: green[400] }}>
             Confirmar
           </Button>
         </DialogActions>

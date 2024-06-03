@@ -19,20 +19,20 @@ function App() {
   });
   return (
     <div className="App">
-      <div className="container"> 
+      <div className="container">
         <Router>
-        <div style={{ paddingBottom: '56px' }}>
-          <Routes>
-           <Route path="/" element={<Welcome />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/cadastro" element={<Register />} />
-            <Route path="*" element={<div>Not Found</div>} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </div>
-    </Router>
-    </div>
+          <div style={{ paddingBottom: '56px' }}>
+            <Routes>
+              <Route path="/" element={<Welcome />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/cadastro" element={<Register />} />
+              <Route path="*" element={<div>Not Found</div>} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </div>
+        </Router>
+      </div>
 
     </div>
   );

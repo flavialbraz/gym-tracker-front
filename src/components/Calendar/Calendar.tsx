@@ -16,7 +16,7 @@ const Calendar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [selectedDay, setSelectedDay] = useState<Dayjs | null>(null);
   const [data, setData] = useState<AttendanceData[]>([]); // Estado para armazenar os dados do backend
-  const apiUrl = 'https://full-tracker-back.vercel.app/api/attendance'; // URL do seu backend
+  const apiUrl = 'https://full-tracker-back.vercel.app/api/attendance';
 
   useEffect(() => {
     fetchGymData();

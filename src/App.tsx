@@ -7,14 +7,19 @@ import Profile from './Pages/Profile/Profile';
 
 function App() {
   return (
-    <div className="App container">
-      <Router>
-      <div style={{ paddingBottom: '56px' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </div>
+    <div className="App">
+      <div className="container"> 
+        <Router>
+        <div style={{ paddingBottom: '56px' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
+    </Router>
+    </div>
+
+    <Router>
       <Footer />
     </Router>
     </div>

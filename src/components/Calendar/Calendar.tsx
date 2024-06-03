@@ -1,25 +1,35 @@
-// src/components/Calendar.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
+import axios from 'axios';
 import { Box, Typography, Grid, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { green, grey } from '@mui/material/colors';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { NavigateBefore } from '@mui/icons-material';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
-const gymData = [
-  { date: '2024-08-01', attended: true },
-  { date: '2024-08-03', attended: true },
-  { date: '2024-08-05', attended: true },
-  { date: '2024-08-08', attended: true },
-  // ... mais dados
-];
+interface AttendanceData {
+  date: string;
+  attended: boolean;
+}
 
 const Calendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs());
   const [open, setOpen] = useState(false);
   const [selectedDay, setSelectedDay] = useState<Dayjs | null>(null);
-  const [data, setData] = useState(gymData);
+  const [data, setData] = useState<AttendanceData[]>([]); // Estado para armazenar os dados do backend
+  const apiUrl = 'https://full-tracker-back.vercel.app/api/attendance'; // URL do seu backend
+
+  useEffect(() => {
+    fetchGymData();
+  }, []);
+
+  const fetchGymData = async () => {
+    try {
+      const response = await axios.get<AttendanceData[]>(apiUrl);
+      setData(response.data);
+    } catch (error) {
+      console.error('Erro ao buscar dados da academia:', error);
+    }
+  };
 
   const handlePrevMonth = () => {
     setSelectedDate(selectedDate.subtract(1, 'month'));
@@ -38,27 +48,22 @@ const Calendar: React.FC = () => {
     setOpen(false);
   };
 
-  const handleMarkAsAttended = () => {
+  const handleMarkAsAttended = async () => {
     if (selectedDay) {
-      const newData = [...data];
       const dateStr = selectedDay.format('YYYY-MM-DD');
-      const existingEntry = newData.find(entry => entry.date === dateStr);
-
-      if (existingEntry) {
-        existingEntry.attended = true;
-      } else {
-        newData.push({ date: dateStr, attended: true });
+      try {
+        await axios.put(`${apiUrl}/${dateStr}`, { attended: true });
+        fetchGymData(); // Atualizar os dados após a marcação
+      } catch (error) {
+        console.error('Erro ao marcar treino:', error);
       }
-
-      setData(newData);
     }
-
     setOpen(false);
   };
 
   const start = selectedDate.startOf('month');
   const end = selectedDate.endOf('month');
-  const days = [];
+  const days: Dayjs[] = [];
   for (let day = start; day.isBefore(end) || day.isSame(end, 'day'); day = day.add(1, 'day')) {
     days.push(day);
   }

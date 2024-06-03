@@ -16,3 +16,8 @@ body {
   background: #2d2d2d;
   color: #fff;
 }
+
+.MuiInputBase-root.MuiOutlinedInput-root {
+  border: 1px solid #ffffff38;
+  border-radius: 10px;
+}

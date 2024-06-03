@@ -1,16 +1,15 @@
 import React from 'react';
 import { Button, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 function Welcome() {
-  const { login } = useAuth();
-
   return (
     <div className="welcome-screen">
       <Typography variant="h4" gutterBottom>
         Bem-vindo! Por favor, faça login para continuar.
       </Typography>
-      <Button variant="contained" color="primary" onClick={login}>
+      <Button variant="contained" color="primary" component={Link} to="/login">
         Login
       </Button>
     </div>
@@ -18,7 +17,3 @@ function Welcome() {
 }
 
 export default Welcome;
-function useAuth(): { login: any; } {
-  throw new Error('Function not implemented.');
-}
-

@@ -1,46 +1,84 @@
-# Getting Started with Create React App
+<a href="" target="_blank">Potuguês **🇧🇷**</a> | <a href="./README_en.md" target="_blank">English **🇺🇸**</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [Gym Tracker Mobile](https://gym-tracker-front.vercel.app/) 🏋🏻‍♀️​🏋🏻‍♂️​
 
-## Available Scripts
+`CURSO: Sistemas para Internet | FIAP`
 
-In the project directory, you can run:
+`ATIVIDADE: Full Staking - Fase 07`
 
-### `npm start`
+## Descrição
+Gym Tracker é uma plataforma desenvolvido em Reactjs que permite aos usuários acompanhar suas atividades na academia. Com este aplicativo, os usuários podem registrar suas sessões de treino para ajudá-los a alcançar seus objetivos de fitness.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Funcionalidades Principais
+- [x] Registro de sessões de treino
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Instalação
+1. Certifique-se de ter o Node.js e o npm instalados em seu sistema.
+2. Clone este repositório para o seu ambiente local:
 
-### `npm test`
+```
+git clone https://github.com/flavialbraz/gym-tracker-front.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Navegue até o diretório do projeto:
 
-### `npm run build`
+```
+$> cd gym-tracker-front
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Instale as dependências do projeto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$> npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Execute a aplicação
+1. Inicie a aplicação:
 
-### `npm run eject`
+```
+$> npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Desenvolvedores
+:octocat:
+Esta aplicação foi desenvolvida por:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/flavialbraz" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/78583429?v=4" width="100px;" alt="Foto de Flavia no GitHub"/><br>
+        <sub>
+          <b>Flavia </b>
+        </sub>
+      </a>
+    </td>
+     <td align="center">
+      <a href="https://github.com/luciana-pereira" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/37550557?v=4" width="100px;" alt="Foto de Fernanda no GitHub"/><br>
+        <sub>
+          <b>Luciana Pereira</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/matheus-poro" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/111644802?v=4" width="100px;" alt="Foto de Matheus Cavalcante no GitHub"/><br>
+        <sub>
+          <b>Matheus Cavalcante</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/TobiasGustavo" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/88210620?v=4" width="100px;" alt="Foto de Tobias Soares no GitHub"/><br>
+        <sub>
+          <b>Tobias Soares</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Licença
+Este projeto é licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
